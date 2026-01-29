@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA ↔ Percentage | UniCalc</title>
+    <meta name="description" content="Convert CGPA to Percentage and vice versa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="wrapper">
+        <header class="header scrolled" id="header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">📐</div>
+                    <span>UniCalc</span>
+                </a>
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <p class="page-label">Calculator</p>
+                    <h1 class="page-title">CGPA ↔ Percentage</h1>
+                    <p class="page-desc">Convert between CGPA and Percentage using the standard 9.5 formula.</p>
+                </div>
+
+                <div class="calc-card">
+                    <div class="calc-section">
+                        <h2 class="calc-title">CGPA → Percentage</h2>
+                        <div class="field">
+                            <label class="field-label">Enter CGPA</label>
+                            <input type="number" id="cgpa-input" class="field-input" placeholder="e.g., 8.5" min="0"
+                                max="10" step="0.01">
+                            <p class="field-hint">Value between 0 and 10</p>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="cgpaToPercentage()">Convert</button>
+                        <div class="result" id="cgpa-result-card">
+                            <p class="result-label">Percentage</p>
+                            <p class="result-value gradient" id="cgpa-result-value">—</p>
+                            <p class="result-sub" id="cgpa-result-sub">Enter CGPA and click convert</p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="calc-section">
+                        <h2 class="calc-title">Percentage → CGPA</h2>
+                        <div class="field">
+                            <label class="field-label">Enter Percentage</label>
+                            <input type="number" id="percentage-input" class="field-input" placeholder="e.g., 80.75"
+                                min="0" max="100" step="0.01">
+                            <p class="field-hint">Value between 0 and 100</p>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="percentageToCgpa()">Convert</button>
+                        <div class="result" id="percent-result-card">
+                            <p class="result-label">CGPA</p>
+                            <p class="result-value gradient" id="percent-result-value">—</p>
+                            <p class="result-sub" id="percent-result-sub">Enter percentage and click convert</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula">
+                    <code>Percentage = CGPA × 9.5</code>
+                    <p>Standard formula used by AICTE, IITs, NITs, and most Indian universities.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">Made by Gourish</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/calculators.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

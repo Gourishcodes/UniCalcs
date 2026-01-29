@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | UniCalc</title>
+    <meta name="description" content="Calculate attendance and classes you can skip.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="wrapper">
+        <header class="header scrolled" id="header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">📐</div>
+                    <span>UniCalc</span>
+                </a>
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <p class="page-label">Calculator</p>
+                    <h1 class="page-title">Attendance</h1>
+                    <p class="page-desc">Know how many classes you can skip or need to attend.</p>
+                </div>
+
+                <div class="calc-card">
+                    <div class="calc-section">
+                        <h2 class="calc-title">Your Details</h2>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label class="field-label">Total Classes</label>
+                                <input type="number" id="total-classes" class="field-input" placeholder="e.g., 50"
+                                    min="1">
+                            </div>
+                            <div class="field">
+                                <label class="field-label">Attended</label>
+                                <input type="number" id="attended-classes" class="field-input" placeholder="e.g., 40"
+                                    min="0">
+                            </div>
+                            <div class="field">
+                                <label class="field-label">Required %</label>
+                                <input type="number" id="required-percentage" class="field-input" placeholder="75"
+                                    min="1" max="100" value="75">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="calculateAttendance()">Calculate</button>
+
+                        <div class="stats" id="attendance-results">
+                            <div class="stat">
+                                <p class="stat-label">Current</p>
+                                <p class="stat-value" id="current-attendance">—</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Status</p>
+                                <p class="stat-value" id="attendance-status">—</p>
+                            </div>
+                            <div class="stat-message" id="attendance-message">
+                                <p>Enter details and calculate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h4 class="info-title">📌 Notes</h4>
+                    <ul>
+                        <li>Most colleges require 75% attendance</li>
+                        <li>Some have stricter 85% requirements</li>
+                        <li>Medical certificates may help in special cases</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">Made by Gourish</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/calculators.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator | UniCalc</title>
+    <meta name="description" content="Calculate cumulative CGPA across semesters.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="wrapper">
+        <header class="header scrolled" id="header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">📐</div>
+                    <span>UniCalc</span>
+                </a>
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <p class="page-label">Calculator</p>
+                    <h1 class="page-title">CGPA Calculator</h1>
+                    <p class="page-desc">Enter credits and GPA for each semester.</p>
+                </div>
+
+                <div class="calc-card">
+                    <div class="calc-section">
+                        <h2 class="calc-title">Semesters</h2>
+                        <div class="rows" id="semesters-container"></div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-secondary" onclick="addSemester()">+ Add Semester</button>
+                            <button class="btn btn-primary" onclick="calculateCGPA()">Calculate</button>
+                        </div>
+
+                        <div class="result" id="cgpa-result-card">
+                            <p class="result-label">Cumulative CGPA</p>
+                            <p class="result-value gradient" id="cgpa-result-value">—</p>
+                            <p class="result-sub" id="cgpa-result-sub">Add semesters to calculate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula">
+                    <code>CGPA = Σ(Credits × GPA) ÷ Σ(Credits)</code>
+                    <p>Weighted average of semester GPAs based on credits.</p>
+                </div>
+
+                <div class="info">
+                    <h4 class="info-title">💡 Tips</h4>
+                    <ul>
+                        <li>Enter total credits per semester (usually 18-25)</li>
+                        <li>Enter GPA on the 10-point scale</li>
+                        <li>Find semester GPA on your grade card</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">Made by Gourish</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/calculators.js"></script>
+    <script src="js/animations.js"></script>
+    <script>initCGPACalculator();</script>
+</body>
+
+</html>

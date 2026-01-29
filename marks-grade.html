@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks → Grade | UniCalc</title>
+    <meta name="description" content="Convert marks to grade instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="wrapper">
+        <header class="header scrolled" id="header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">📐</div>
+                    <span>UniCalc</span>
+                </a>
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <p class="page-label">Calculator</p>
+                    <h1 class="page-title">Marks → Grade</h1>
+                    <p class="page-desc">Get your percentage and grade instantly.</p>
+                </div>
+
+                <div class="calc-card">
+                    <div class="calc-section">
+                        <h2 class="calc-title">Your Marks</h2>
+
+                        <div class="field-row" style="max-width: 400px;">
+                            <div class="field">
+                                <label class="field-label">Marks Obtained</label>
+                                <input type="number" id="marks-obtained" class="field-input" placeholder="e.g., 85"
+                                    min="0">
+                            </div>
+                            <div class="field">
+                                <label class="field-label">Total Marks</label>
+                                <input type="number" id="total-marks" class="field-input" placeholder="100" min="1"
+                                    value="100">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="max-width: 400px;" onclick="calculateGrade()">Get
+                            Grade</button>
+
+                        <div class="stats" id="grade-results">
+                            <div class="stat">
+                                <p class="stat-label">Percentage</p>
+                                <p class="stat-value" id="result-percentage">—</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Grade</p>
+                                <p class="stat-value" id="result-grade">—</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Points</p>
+                                <p class="stat-value" id="result-points">—</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Status</p>
+                                <p class="stat-value" id="result-desc">—</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h4 class="info-title">📋 Grade Scale</h4>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>%</th>
+                                    <th>Grade</th>
+                                    <th>Points</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>90+</td>
+                                    <td>O</td>
+                                    <td>10</td>
+                                    <td>Outstanding</td>
+                                </tr>
+                                <tr>
+                                    <td>80-89</td>
+                                    <td>A+</td>
+                                    <td>9</td>
+                                    <td>Excellent</td>
+                                </tr>
+                                <tr>
+                                    <td>70-79</td>
+                                    <td>A</td>
+                                    <td>8</td>
+                                    <td>Very Good</td>
+                                </tr>
+                                <tr>
+                                    <td>60-69</td>
+                                    <td>B+</td>
+                                    <td>7</td>
+                                    <td>Good</td>
+                                </tr>
+                                <tr>
+                                    <td>50-59</td>
+                                    <td>B</td>
+                                    <td>6</td>
+                                    <td>Average</td>
+                                </tr>
+                                <tr>
+                                    <td>45-49</td>
+                                    <td>C</td>
+                                    <td>5</td>
+                                    <td>Below Avg</td>
+                                </tr>
+                                <tr>
+                                    <td>40-44</td>
+                                    <td>D</td>
+                                    <td>4</td>
+                                    <td>Pass</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;40</td>
+                                    <td>F</td>
+                                    <td>0</td>
+                                    <td>Fail</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">Made by Gourish</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/calculators.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backlog Impact | UniCalc</title>
+    <meta name="description" content="Understand backlog impact on placements.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="wrapper">
+        <header class="header scrolled" id="header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">📐</div>
+                    <span>UniCalc</span>
+                </a>
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <a href="index.html" class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <p class="page-label">Calculator</p>
+                    <h1 class="page-title">Backlog Impact</h1>
+                    <p class="page-desc">See how backlogs affect your placements and career.</p>
+                </div>
+
+                <div class="calc-card">
+                    <div class="calc-section" style="text-align: center;">
+                        <h2 class="calc-title">Your Details</h2>
+
+                        <div class="field-row" style="max-width: 400px; margin: 0 auto;">
+                            <div class="field" style="text-align: left;">
+                                <label class="field-label">Total Subjects</label>
+                                <input type="number" id="total-subjects" class="field-input" placeholder="e.g., 40"
+                                    min="1">
+                                <p class="field-hint">All semesters combined</p>
+                            </div>
+                            <div class="field" style="text-align: left;">
+                                <label class="field-label">Backlogs</label>
+                                <input type="number" id="backlog-count" class="field-input" placeholder="e.g., 2"
+                                    min="0">
+                                <p class="field-hint">Active/uncleared</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="width: 100%; max-width: 400px; margin: 0 auto;"
+                            onclick="calculateBacklogImpact()">Check Impact</button>
+
+                        <div class="stats" id="backlog-results"
+                            style="max-width: 400px; margin: var(--space-6) auto 0;">
+                            <div class="stat">
+                                <p class="stat-label">Backlog %</p>
+                                <p class="stat-value" id="backlog-percentage">—</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Impact</p>
+                                <p class="stat-value" id="impact-level">—</p>
+                            </div>
+                            <div class="stat-message" id="impact-message">
+                                <p>Enter details to see impact</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h4 class="info-title">📌 Quick Guide</h4>
+                    <ul>
+                        <li><strong>0 backlogs:</strong> Ideal for all companies</li>
+                        <li><strong>1-2:</strong> Many companies still consider</li>
+                        <li><strong>3-4:</strong> Significant impact on placements</li>
+                        <li><strong>5+:</strong> Critical — focus on clearing first</li>
+                    </ul>
+                </div>
+
+                <div class="info">
+                    <h4 class="info-title">💡 Tips</h4>
+                    <ul>
+                        <li>Prioritize clearing backlogs before placements</li>
+                        <li>Form study groups with classmates</li>
+                        <li>Some companies check "backlog history"</li>
+                        <li>Consider re-evaluation if close to passing</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">Made by Gourish</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/calculators.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>
