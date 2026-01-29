@@ -2,7 +2,7 @@
 
 A small student calculator website.
 
-Built as an **experimental project** Built as an experimental project, vibecoded heavily and surprisingly functional. 
+Built as an **experimental project** vibecoded heavily and surprisingly functional. 
 
 ---
 
